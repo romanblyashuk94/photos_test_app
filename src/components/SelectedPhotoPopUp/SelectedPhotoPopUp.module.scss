@@ -26,32 +26,7 @@
       .PopUpContentWrapper {
         display: flex;
         font-size: 13px;
-        .popUpPhotoBlock{
-          margin: 0 15px 0 0;
-          .photo {
-            width: 330px;
-          }
-          .comentForm {
-            margin-top: 30px;
-            max-width: 330px;
-            .comentInput {
-              width: 330px;
-              height: 30px;
-              background: #FFFFFF;
-              border: 1px solid #CCCCCC;
-              border-radius: 3px;
-              margin-bottom: 20px;
-              padding: 8px 10px;
-            }
-            .comentButton {
-              width: 330px;
-              height: 30px;
-              background: #4997D0;
-              border-radius: 3px;
-              color: white;
-            }
-          }
-        }
+
         .popUpComentsBlock {
           .popUpComentItem {
             margin-bottom: 20px;

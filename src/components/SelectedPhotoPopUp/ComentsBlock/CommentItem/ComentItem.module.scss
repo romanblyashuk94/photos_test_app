@@ -1,0 +1,14 @@
+.popUpComentItem {
+  margin-bottom: 20px;
+  text-align: left;
+  .commentName {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  .comentDate {
+    color: #999999;
+  }
+  .comentText {
+    margin-top: 5px;
+  }
+}

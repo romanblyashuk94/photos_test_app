@@ -3,24 +3,22 @@ import Photo from "./Photo/Photo";
 import { useEffect, useState } from "react";
 import { imagesAPI } from "../../api/api";
 import Preloader from "../common/Preloader/Preloader";
-import SelectedPhotoPopUp from "../SelectedPhotoPopUp/SelectedPhotoPopUp";
 
 const Photos = (props) => {
-  const [photosData, setPhotos] = useState([]);
-
-
+  const [photosData, setPhotos] = useState();
+ 
   useEffect(() => {
     imagesAPI.getImagesData().then((photos) => {
       setPhotos(photos);
     });
   }, []);
-
+ 
   if (!photosData) return <Preloader />;
-  debugger
+
   return (
     <div className={s.photosWrapper}>
       {photosData.map((photo) => (
-        <Photo key={photo.image_id} photo={photo.src} />
+        <Photo key={photo.image_id} image={photo.src} imageId={photo.image_id} />
       ))}
     </div>
   );
