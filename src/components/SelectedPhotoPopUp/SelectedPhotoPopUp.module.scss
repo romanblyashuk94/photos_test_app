@@ -1,0 +1,72 @@
+.popUp {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  .popUpBody {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+    .popUpContent {
+      background-color: white;
+      color: black;
+      width: 620px;
+      padding: 30px;
+      position: relative;
+      .closePopUp {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        max-width: 20px;
+      }
+      .PopUpContentWrapper {
+        display: flex;
+        font-size: 13px;
+        .popUpPhotoBlock{
+          margin: 0 15px 0 0;
+          .photo {
+            width: 330px;
+          }
+          .comentForm {
+            margin-top: 30px;
+            max-width: 330px;
+            .comentInput {
+              width: 330px;
+              height: 30px;
+              background: #FFFFFF;
+              border: 1px solid #CCCCCC;
+              border-radius: 3px;
+              margin-bottom: 20px;
+              padding: 8px 10px;
+            }
+            .comentButton {
+              width: 330px;
+              height: 30px;
+              background: #4997D0;
+              border-radius: 3px;
+              color: white;
+            }
+          }
+        }
+        .popUpComentsBlock {
+          .popUpComentItem {
+            margin-bottom: 20px;
+            .comentDate {
+              color: #999999;
+            }
+            .comentText {
+              margin-top: 5px;
+            }
+          }
+
+        }
+      }
+    }
+
+  }
+
+}
