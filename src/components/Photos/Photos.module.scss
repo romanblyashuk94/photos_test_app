@@ -4,3 +4,12 @@
   flex-wrap: wrap;
   align-items: center;
 }
+
+@media screen and (max-width: 485px) {
+  .photosWrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}

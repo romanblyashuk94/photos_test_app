@@ -1,3 +1,27 @@
 .popUpComentsBlock {
+    .popUpComentItem {
+      margin-bottom: 20px;
+      .comentDate {
+        color: #999999;
+      }
+      .comentText {
+        margin-top: 5px;
+      }
+    }
+  }
 
-}
+  @media screen and (max-width: 530px) {
+    .popUpComentsBlock {
+        align-self:flex-start;
+        .popUpComentItem {
+          margin-bottom: 20px;
+          width: 100%;
+          .comentDate {
+            color: #999999;
+          }
+          .comentText {
+            margin-top: 5px;
+          }
+        }
+      }
+  }

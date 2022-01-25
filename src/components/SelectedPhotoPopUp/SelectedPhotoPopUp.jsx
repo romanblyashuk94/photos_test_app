@@ -12,13 +12,10 @@ const SelectedPhotoPopUp = ({ imageId, setIsPhotoSelect }) => {
   const [imageComments, setImageComments] = useState([]);
   const [nameFieldValue, setNameFieldValue] = useState("");
   const [commentFieldValue, setCommentFieldValue] = useState("");
-
+  
   useEffect(() => {
     imagesAPI.getLargeImage(imageId).then((image) => setSelectedImage(image));
-  }, []);
-
-  useEffect(() => {
-    updateComments();
+    updateComments()
   }, []);
 
   const updateComments = () => {

@@ -26,22 +26,37 @@
       .PopUpContentWrapper {
         display: flex;
         font-size: 13px;
+      }
+    }
+  }
+}
 
-        .popUpComentsBlock {
-          .popUpComentItem {
-            margin-bottom: 20px;
-            .comentDate {
-              color: #999999;
-            }
-            .comentText {
-              margin-top: 5px;
-            }
-          }
-
+@media screen and (max-width: 530px) {
+  .popUp {
+    .popUpBody {
+      .popUpContent {
+        width: 460px;
+        .PopUpContentWrapper {
+          align-items: center;;
+          flex-direction: column;
         }
       }
     }
-
   }
+}
 
+@media screen and (max-width: 460px) {
+  .popUp {
+    .popUpBody {
+      .popUpContent {
+        width: 360px;
+        .closePopUp {
+          position: absolute;
+          right: 15px;
+          top: 15px;
+          max-width: 20px;
+        }
+      }
+    }
+  }
 }
