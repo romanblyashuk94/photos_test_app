@@ -18,3 +18,11 @@
     color: white;
   }
 }
+
+@media screen and (max-width: 530px) {
+  .commentForm {
+    margin: 30px auto 0;
+    }
+    .commentButton {
+    }
+}

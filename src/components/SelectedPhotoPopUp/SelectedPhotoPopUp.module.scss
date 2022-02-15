@@ -34,10 +34,11 @@
 @media screen and (max-width: 530px) {
   .popUp {
     .popUpBody {
+      width: 100%;
       .popUpContent {
         width: 460px;
         .PopUpContentWrapper {
-          align-items: center;;
+          align-items: center;
           flex-direction: column;
         }
       }
@@ -49,7 +50,10 @@
   .popUp {
     .popUpBody {
       .popUpContent {
-        width: 360px;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        padding: 0;
         .closePopUp {
           position: absolute;
           right: 15px;

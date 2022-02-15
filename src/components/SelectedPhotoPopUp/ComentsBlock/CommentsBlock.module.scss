@@ -1,18 +1,14 @@
 .popUpComentsBlock {
-    .popUpComentItem {
-      margin-bottom: 20px;
-      .comentDate {
-        color: #999999;
-      }
-      .comentText {
-        margin-top: 5px;
-      }
-    }
+  max-height: 400px;
+  overflow: auto;
+  padding: 0 5px;
+  flex: 1 1 auto;
   }
 
   @media screen and (max-width: 530px) {
     .popUpComentsBlock {
         align-self:flex-start;
+        padding: 30px;
         .popUpComentItem {
           margin-bottom: 20px;
           width: 100%;

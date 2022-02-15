@@ -12,35 +12,56 @@ const SelectedPhotoPopUp = ({ imageId, setIsPhotoSelect }) => {
   const [imageComments, setImageComments] = useState([]);
   const [nameFieldValue, setNameFieldValue] = useState("");
   const [commentFieldValue, setCommentFieldValue] = useState("");
-  
+
   useEffect(() => {
-    imagesAPI.getLargeImage(imageId).then((image) => setSelectedImage(image));
-    updateComments()
+    getLargeImage();
+    updateComments();
   }, []);
 
-  const updateComments = () => {
-    imagesAPI.getImageComments(imageId).then((comments) => {
-      if (Array.isArray(comments)) {
-        setImageComments(comments);
+  // callbacks:
+  const getLargeImage = async () => {
+    try {
+      const largeImage = await imagesAPI.getLargeImage(imageId);
+      setSelectedImage(largeImage);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const updateComments = async () => {
+    try {
+      const imageComments = await imagesAPI.getImageComments(imageId);
+      if (Array.isArray(imageComments)) {
+        setImageComments(imageComments);
       } else {
         setImageComments([]);
       }
-    });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const submitComment = () => {
-    imagesAPI
-      .submitComment(imageId, nameFieldValue, commentFieldValue)
-      .then((response) => {
+  const submitComment = async () => {
+    if (nameFieldValue.length > 0 && commentFieldValue.length > 0) {
+      try {
+        await imagesAPI.submitComment(
+          imageId,
+          nameFieldValue,
+          commentFieldValue
+        );
         updateComments();
         setNameFieldValue("");
         setCommentFieldValue("");
-      })
-      .catch(() => console.log("error"));
+      } catch (error) {
+        console.log(error);
+      }
+    }
   };
+
   const closePhotoPopUp = () => {
     setIsPhotoSelect(false);
   };
+  //-------------------------------
 
   const ref = useRef();
   useOnClickOutside(ref, closePhotoPopUp);

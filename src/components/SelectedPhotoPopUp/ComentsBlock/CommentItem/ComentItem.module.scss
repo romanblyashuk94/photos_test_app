@@ -1,14 +1,33 @@
 .popUpComentItem {
   margin-bottom: 20px;
   text-align: left;
+  max-width: 100%;
   .commentName {
     margin-right: 10px;
     font-weight: bold;
+    word-wrap: break-word;
   }
   .comentDate {
     color: #999999;
   }
   .comentText {
     margin-top: 5px;
+    max-width: 100%;
+    word-wrap: break-word;
+
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .popUpComentItem {
+    margin-bottom: 20px;
+    max-width: 100%;
+    word-break: break-all;
+    .comentDate {
+      color: #999999;
+    }
+    .comentText {
+      margin-top: 5px;
+    }
   }
 }
